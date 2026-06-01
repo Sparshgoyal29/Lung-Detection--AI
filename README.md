@@ -30,31 +30,7 @@ Patient Details → Upload X-Ray → AI Analysis → Report Generation → PDF D
 
 ## Installation
 
-```bash
-pip install -r requirements.txt
-python app.py
-```
 
-## Run Application
-
-Open:
-
-```text
-http://127.0.0.1:5000
-```
-
-Dashboard:
-
-```text
-http://127.0.0.1:5000/dashboard
-```
-
-## Future Improvements
-
-* Lung Cancer Detection Model
-* User Authentication
-* Cloud Deployment
-* Advanced Medical Reports
 
 ## Author
 
