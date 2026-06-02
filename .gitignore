@@ -1,0 +1,13 @@
+venv/
+__pycache__/
+*.pyc
+*.db
+*.pdf
+
+dataset/
+model/
+
+backend/lung_model.h5
+
+backend/static/uploads/
+backend/uploads/

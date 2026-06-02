@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>AI Lung Disease Report</title>
+
+<style>
+
+body{
+    font-family:Arial;
+    background:#f4f4f4;
+}
+
+.container{
+    width:700px;
+    margin:40px auto;
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 0 10px gray;
+}
+
+.header{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.normal-card{
+    background:#d4edda;
+    padding:20px;
+    border-radius:10px;
+    margin-top:20px;
+    text-align:center;
+}
+
+.danger-card{
+    background:#f8d7da;
+    padding:20px;
+    border-radius:10px;
+    margin-top:20px;
+    text-align:center;
+}
+
+.confidence{
+    font-size:20px;
+    font-weight:bold;
+    text-align:center;
+}
+
+.xray{
+    text-align:center;
+    margin-top:20px;
+}
+
+.xray img{
+    border-radius:10px;
+    box-shadow:0 0 10px gray;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="header">
+
+<h1>SND Hospital</h1>
+
+<h3>AI Lung Disease Detection System</h3>
+
+</div>
+
+<hr>
+
+<h2>Patient Details</h2>
+
+<p><b>Name:</b> {{ name }}</p>
+
+<p><b>Age:</b> {{ age }}</p>
+
+<p><b>Gender:</b> {{ gender }}</p>
+
+<p><b>Phone:</b> {{ phone }}</p>
+
+<hr>
+
+<div class="xray">
+
+<h3>Uploaded X-Ray</h3>
+
+<img
+src="{{ url_for('static', filename='uploads/' + filename) }}"
+width="300">
+
+</div>
+
+<hr>
+
+{% if result == "NORMAL" %}
+
+<div class="normal-card">
+
+<h2>🟢 LOW RISK</h2>
+
+<h1>{{ result }}</h1>
+
+</div>
+
+{% else %}
+
+<div class="danger-card">
+
+<h2>🔴 HIGH RISK</h2>
+
+<h1>{{ result }}</h1>
+
+</div>
+
+{% endif %}
+
+<br>
+
+<div class="confidence">
+
+Confidence Score: {{ confidence }}%
+
+</div>
+
+<br><br>
+
+<a href="/download/{{ name }}">
+
+<button>
+
+Download PDF Report
+
+</button>
+
+</a>
+
+<br>
+
+{% if result == "NORMAL" %}
+
+<p>
+<b>Recommendation:</b>
+Routine monitoring recommended.
+</p>
+
+{% else %}
+
+<p>
+<b>Recommendation:</b>
+Immediate consultation with a Pulmonologist is advised.
+</p>
+
+{% endif %}
+
+</div>
+
+</body>
+
+</html>

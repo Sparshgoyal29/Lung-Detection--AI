@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>SND Hospital</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f4f4f4;
+}
+
+.container{
+width:700px;
+margin:40px auto;
+background:white;
+padding:30px;
+border-radius:10px;
+box-shadow:0 0 10px gray;
+}
+
+input,select{
+width:100%;
+padding:10px;
+margin:10px 0;
+}
+
+button{
+padding:12px;
+width:100%;
+font-size:16px;
+}
+
+h1,h2{
+text-align:center;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>SND Hospital</h1>
+
+<h2>AI Lung Disease Detection System</h2>
+
+<form
+action="/predict"
+method="post"
+enctype="multipart/form-data">
+
+<label>Patient Name</label>
+<input type="text" name="name" required>
+
+<label>Age</label>
+<input type="number" name="age" required>
+
+<label>Gender</label>
+
+<select name="gender">
+
+<option>Male</option>
+<option>Female</option>
+
+</select>
+
+<label>Phone Number</label>
+
+<input type="text" name="phone" required>
+
+<label>Upload X-Ray</label>
+
+<input type="file" name="file" required>
+
+<button type="submit">
+
+Analyze
+
+</button>
+
+</form>
+
+</div>
+
+</body>
+</html>
